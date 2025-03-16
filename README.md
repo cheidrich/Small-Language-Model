@@ -6,6 +6,7 @@ https://wortschatz.uni-leipzig.de/de/download/German
 Dateien für Training:
 
 deu_news_2024_10K-words.txt
+
 deu_news_2024_10K-sentences.txt
 
 ## Beschreibung des Modells und der Vorarbeit
