@@ -17,8 +17,7 @@ Dieses Projekt umfasst ein Sprachmodell, das auf deutschen Nachrichtensätzen tr
 - **Datenquelle**: Die Datei `deu_news_2024_10K-sentences.txt` enthält 10.000 Sätze, die eingelesen und verarbeitet werden.
 - **Tokenisierung**: 
   - Funktion `tokenize`: Zerlegt Sätze in Wörter und Satzzeichen mit `re.findall(r'\w+|[^\w\s]', sentence)`.
-  - Alle Anführungszeichen (`"`, `“`, `”`, `»`, `«`) werden entfernt (`re.sub(r'["“”»«]', '', sentence)`).
-  - Nur bestimmte Satzzeichen (`,`, `.`, `:`, `?`) werden beibehalten; andere werden durch leere Strings ersetzt.
+  - Nur bestimmte Satzzeichen (`,`, `.`, `:`, `?`) werden der Einfachheit halber behalten; andere werden durch leere Strings ersetzt.
   - Keine `.lower()`-Konvertierung, um die ursprüngliche Groß-/Kleinschreibung zu erhalten.
 - **Wortarten**:
   - Hardgecodete Listen: `ARTIKEL`, `PRÄPOSITIONEN`, `KONJUNKTIONEN`, `SATZZEICHEN`.
@@ -69,19 +68,6 @@ Dieses Projekt umfasst ein Sprachmodell, das auf deutschen Nachrichtensätzen tr
     - Nomen: Immer groß (basierend auf `word_to_class` oder Modellvorhersage).
   - Satzzeichen: Kein Leerzeichen davor.
 
-### 5. Visualisierung
-- **Häufigste Wörter**: Waagrechter Balkenplot der 7 häufigsten Wörter in Himmelblau (`skyblue`).
-- **Wortarten**: Waagrechter Balkenplot der Wortarten-Verteilung in Hellgrün (`lightgreen`).
-- **Loss-Verlauf**: Linienplot mit:
-  - Gesamt-Loss (Blau), Wort-Loss (Rot), Wortart-Loss (Grün).
-  - Alle 20 Sätze aufgezeichnet.
 
-### Besondere Anpassungen
-- **Overfitting**: Kleine `embedding_dim = 50` gegen Overfitting bei begrenztem Datensatz.
-- **Satzzeichen**: Nur `,`, `.`, `:`, `?` erlaubt, Anführungszeichen entfernt.
-- **Zufälliges Training**: Sätze werden zufällig abgeschnitten, um Generalisierung zu fördern.
-
-### Abschließende Bemerkungen
-Dieses Modell ist ein kompaktes RNN-basiertes Sprachmodell, optimiert für deutsche Sätze mit einem Fokus auf Großschreibung von Nomen und minimalistischem Satzzeichen-Handling. Es ist gegen Overfitting durch eine kleine `embedding_dim` geschützt und bietet eine detaillierte Visualisierung der Trainings- und Datenmetriken.
 
 
