@@ -1,5 +1,11 @@
 # Small-Language-Model
 
+In diesem Repository möchte ich sowohl selbst-trainierte als auch vortrainierte Sprachmodelle testen.
+
+---
+
+## Self-Trained
+
 Download:
 https://wortschatz.uni-leipzig.de/de/download/German
 
@@ -68,6 +74,21 @@ Dieses Projekt umfasst ein Sprachmodell, das auf deutschen Nachrichtensätzen tr
     - Nomen: Immer groß (basierend auf `word_to_class` oder Modellvorhersage).
   - Satzzeichen: Kein Leerzeichen davor.
 
+---
+
+## Pre-Trained
+
+### Apotheken-Chatbot
+
+Dieses Repository enthält außerdem ein Jupyter Notebook, das einen Apotheken-Chatbot implementiert (unter Verwendung eines vortrainierten Modells `google/flan-t5-small` von HuggingFace). Der Chatbot beantwortet Fragen zu Medikamenten, einschließlich Kosten, Verfügbarkeit, Anwendungsgebieten und Dosierung, basierend auf einer vordefinierten Apotheken-Datenbank. Natürlich ist es wichtig, dass ein solcher Chatbot korrekte Antworten liefert und Aussagen der Nutzer kritisch hinterfragt.
+
+#### Hauptfunktionen:
+
+- **Antworten:** Generiert Antworten aus der Datenbank und strukturiert die Prompts für präzise und verständliche Antworten.
+- **Sicherheitsprüfungen:** Überprüft die Anwendungsgebiete von Medikamenten, um fehlerhafte Nutzungsempfehlungen zu vermeiden.
+- **Rückfragen:** Schlägt automatisch relevante Rückfragen vor (z. B. zur Dosierung), basierend auf den Nutzeranfragen.
+
+Der Chatbot verarbeitet Fragen wie „Was kostet Aspirin?“ und stellt sicher, dass die Antworten im vorgegebenen Kontext bleiben.
 
 
 
