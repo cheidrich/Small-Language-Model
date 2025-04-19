@@ -1,6 +1,6 @@
 # Small-Language-Model
 
-In diesem Repository möchte ich sowohl selbst-trainierte als auch vortrainierte Sprachmodelle testen.
+In diesem Repository möchte ich sowohl selbst-trainierte als auch vortrainierte Sprachmodelle aus Hugging Face testen.
 
 ---
 
@@ -24,7 +24,6 @@ Dieses Projekt umfasst ein Sprachmodell, das auf deutschen Nachrichtensätzen tr
 - **Tokenisierung**: 
   - Funktion `tokenize`: Zerlegt Sätze in Wörter und Satzzeichen mit `re.findall(r'\w+|[^\w\s]', sentence)`.
   - Nur bestimmte Satzzeichen (`,`, `.`, `:`, `?`) werden der Einfachheit halber behalten; andere werden durch leere Strings ersetzt.
-  - Keine `.lower()`-Konvertierung, um die ursprüngliche Groß-/Kleinschreibung zu erhalten.
 - **Wortarten**:
   - Hardgecodete Listen: `ARTIKEL`, `PRÄPOSITIONEN`, `KONJUNKTIONEN`, `SATZZEICHEN`.
   - Funktion `get_word_class`: Klassifiziert Wörter heuristisch:
