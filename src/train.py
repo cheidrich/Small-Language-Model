@@ -2,22 +2,9 @@ import random
 import torch
 import torch.nn as nn
 from typing import List, Tuple
+from .config import epochs, learning_rate, word_loss_weight, class_loss_weight
 from .model import SmallLanguageModel
 from .preprocessing import tokenize
-
-
-
-vocab_size = 8000
-
-epochs = 30
-learning_rate = 0.005
-word_loss_weight = 0.4
-class_loss_weight = 0.6
-
-embedding_dim = 25
-hidden_dim = 100
-
-max_generate_len = 20
 
 
 def prepare_data(sentence: str, word_to_idx: dict, class_to_idx: dict) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
