@@ -81,3 +81,30 @@ def plot_embeddings(embeddings: np.ndarray, labels: list) -> None:
 
     plt.tight_layout()
     plt.show()
+
+def plot_component_losses(history: dict) -> None:
+    """
+    Plottet den durchschnittlichen Wort-Loss (lw), Wortart-Loss (lc)
+    und Gesamt-Loss pro Epoche.
+
+    :param history: Dict mit den Keys 'epoch', 'lw', 'lc' und 'loss'
+    """
+    # Einmalige, sortierte Epochenliste
+    epochs = sorted(set(history['epoch']))
+
+    # Durchschnittswerte pro Epoche berechnen
+    avg_lw   = [np.mean([lw for ep, lw in zip(history['epoch'], history['lw'])   if ep == e]) for e in epochs]
+    avg_lc   = [np.mean([lc for ep, lc in zip(history['epoch'], history['lc'])   if ep == e]) for e in epochs]
+    avg_loss = [np.mean([l  for ep, l  in zip(history['epoch'], history['loss']) if ep == e]) for e in epochs]
+
+    # Plot
+    plt.figure(figsize=(12, 5))
+    plt.plot(epochs, avg_lw,   marker='o', linestyle='-',  label='Durchschnittlicher Wort-Loss (lw)')
+    plt.plot(epochs, avg_lc,   marker='o', linestyle='-',  label='Durchschnittlicher Wortart-Loss (lc)')
+    plt.plot(epochs, avg_loss, marker='o', linestyle='--', label='Durchschnittlicher Gesamt-Loss')
+    plt.title('Durchschnittliche Loss-Komponenten pro Epoche')
+    plt.xlabel('Epoche')
+    plt.ylabel('Loss')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
