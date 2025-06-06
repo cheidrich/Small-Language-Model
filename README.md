@@ -2,7 +2,7 @@
 
 In diesem Repository möchte ich sowohl selbst-trainierte als auch vortrainierte Sprachmodelle aus Hugging Face testen. Das Endresultat sieht man hier in Form der Embeddings bzw. des semantischen Vektorraums. Hier werden Wörter näher anneinander gecluster, je mehr sie semantisch in der Trainingsmenge miteinander zu tun haben.
 
-![Embeddings](eda-notebooks/semantic-vector-space.png)
+![Embeddings](eda-notebooks/semantic-vector-space.PNG)
 
 ---
 
